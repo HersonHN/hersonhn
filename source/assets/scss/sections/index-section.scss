@@ -1,41 +1,29 @@
 
 .index-section {
-  $logo-width: 900px / 3;
-  $logo-height: 1000px / 3;
-  
-  $canvas-width: 256px * 1.5;
-  $canvas-height: 224px * 1.5;
+  $base-width: 500px;
 
-  .welcome {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .logo {
-    width: $logo-width;
-    height: $logo-height;
+  .logo-container {
+    max-width: $base-width;
     display: block;
     margin: 50px auto;
     position: relative;
     overflow: hidden;
+    background-color: black;
 
-    svg, canvas {
+    canvas, .logo {
       display: block;
-      position: absolute;
+      width: 100%;
     }
 
     canvas {
-      width: $canvas-width;
-      height: $canvas-height;
-      top: ($logo-height - $canvas-height) / 2;
-      left: ($logo-width - $canvas-width) / 2;
-    }
-
-    svg {
-      width: $logo-width;
-      height: $logo-height;
+      position: absolute;
       top: 0;
       left: 0;
+      z-index: 0;
+    }
+
+    .logo {
+      transform: scale(1.1); // this removes the tiny line around
     }
   }
 }

@@ -12,22 +12,17 @@ cssFiles:
 {% block content %}
 
   <main class="index-section">
-    <section class="logo">
+    <section class="logo-container">
       <canvas></canvas>
-      <svg version="1.1"
-          id="logo_inverse"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px" y="0px" viewBox="0 0 900 1000" 
-          style="enable-background:new 0 0 900 1000;"
-          xml:space="preserve">
-        <path style="fill: white" d="M0,0v1000h900V0H0z M766.7,400L700,600l-33.3,100L600,900l-100,0H400v0l66.7-200L500,600l0,0h0H400h-66.7L300,700H100 l33.3-100L200,400l33.3-100L300,100h100h100h0l0,0l-66.7,200L400,400l0,0h0h100h66.7L600,300h200L766.7,400z"/>
+      <svg class="logo" version="1.1" id="logo_inverse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 256 224" style="enable-background:new 0 0 256 224;" width="100%" height="100%" xml:space="preserve">
+      <path style="fill: white" d="M0,0v224h256V0H0z M198.9,89.6L184,134.4l-7.5,22.4l-14.9,44.8h-22.4h-22.4l0,0l14.9-44.8l7.5-22.4l0,0l0,0
+        h-22.4h-14.9l-7.5,22.4H49.6l7.5-22.4L72,89.6l7.5-22.4l14.9-44.8h22.4h22.4l0,0l0,0l-14.9,44.8l-7.5,22.4l0,0l0,0h22.4h14.9
+        l7.5-22.4h44.8L198.9,89.6z"/>
       </svg>
     </section>
 
-    <div class="welcome">
-      <p class="center"><a target="_blank" href="https://news.herson.hn/">RSS Reader</a></p>
-    </div>
+    <p class="center"><a target="_blank" href="https://news.herson.hn/">RSS Reader</a></p>
   </main>
 
 {% endblock %}
