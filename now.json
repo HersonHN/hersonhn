@@ -1,0 +1,13 @@
+{
+  "type": "static",
+  "public": true,
+  "static": {
+    "public": "public",
+    "directoryListing": false
+  },
+  "name": "hersonhn",
+  "alias": [
+    "www.herson.hn",
+    "herson.hn"
+  ]
+}

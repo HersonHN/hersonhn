@@ -1,9 +1,13 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "hersonhn",
+  "version": "0.0.2",
+  "description": "Herson Salinas' Website",
   "private": true,
   "hexo": {
     "version": "3.7.1"
+  },
+  "scripts": {
+    "bulid": "hexo generate"
   },
   "dependencies": {
     "hexo": "^3.7.0",
