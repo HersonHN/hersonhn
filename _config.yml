@@ -15,6 +15,14 @@ node_sass:
   precision: 5
   sourceComments: false
 
+skip_render:
+  - assets/css/*
+  - assets/js/*
+  - assets/dist/*
+  - assets/src/*
+  - assets/data/*
+
+
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:

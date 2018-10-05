@@ -1,3 +1,1 @@
-
-<header class="site-header">
-</header>
+<header class="site-header"></header>

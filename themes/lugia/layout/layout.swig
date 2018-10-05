@@ -5,11 +5,8 @@
   </head>
 
   <body>
-    <div class="content">
-      <!--
-        env: {{ env() }}
-        FTE APP: {{ app_url() }}
-      -->
+    <div id="page-content">
+      <!-- {{ app_url() }} -->
 
       {% include 'partials/site-header.swig' %}
       {{page.content}}
