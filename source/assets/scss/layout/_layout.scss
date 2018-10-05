@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: crimson;
+}
+
+
+#page-content {
+  display: flex;
+  flex-flow: column nowrap;
+  background: white;
+  color: #333;
+  min-height: 100%;
+}
+
+main {
+  flex: 1 1;
+}

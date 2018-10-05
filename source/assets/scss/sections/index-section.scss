@@ -1,0 +1,33 @@
+
+.index-section {
+
+  .welcome {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 350px;
+    height: 390px;
+    display: block;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+
+    img, svg, canvas {
+      width: 350px;
+      height: 400px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    canvas {
+      image-rendering: pixelated;
+      width: 300px;
+      height: 350px;
+      margin: 25px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+
+a {
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: crimson;
+}
+
+.center {
+  text-align: center;
+}
+
+p {
+  font-family: 'Verdana', sans-serif;
+  line-height: 1.5em;
+}
+
+hr {
+  border: none;
+  border-bottom: #ddd 1px solid;
+  margin: 2rem 0;
+}

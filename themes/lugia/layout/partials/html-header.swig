@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="/assets/scss/master.css">
 <link rel="stylesheet" href="/assets/css/fontello/css/fontello-embedded.css">
 
+{% for fileName in page.cssFiles %}
+<link rel="stylesheet" href="{{ fileName }}">
+{% endfor %}
 
 {% include 'google-analitics.swig' %}
 

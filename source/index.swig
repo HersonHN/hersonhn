@@ -5,6 +5,8 @@ date: 2018-10-4 18:00:00
 jsFiles:
   - /assets/js/utils.js
   - /assets/dist/index.js
+cssFiles:
+  - /assets/scss/sections/index-section.css
 ---
 
 {% block content %}
