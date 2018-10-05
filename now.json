@@ -9,5 +9,8 @@
   "alias": [
     "www.herson.hn",
     "herson.hn"
+  ],
+  "files": [
+    "public/"
   ]
 }
