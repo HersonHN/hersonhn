@@ -1,0 +1,20 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+title: Herson
+author: Herson Salinas
+theme: lugia
+
+APP:
+  production: https://www.herson.hn
+  local: http://localhost:8000
+
+node_sass:
+  outputStyle: compressed
+  precision: 5
+  sourceComments: false
+
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:
