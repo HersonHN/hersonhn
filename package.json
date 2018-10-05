@@ -8,7 +8,7 @@
   },
   "scripts": {
     "bulid": "hexo generate",
-    "publish": "hexo generate && deploy"
+    "publish": "hexo generate && now && now alias"
   },
   "dependencies": {
     "hexo": "^3.7.0",
