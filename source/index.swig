@@ -12,7 +12,7 @@ cssFiles:
 {% block content %}
 
   <main class="index-section">
-    <section class="logo-container">
+    <section class="logo-container" onclick="location.reload()">
       <canvas></canvas>
       <svg class="logo" version="1.1" id="logo_inverse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
         y="0px" viewBox="0 0 256 224" style="enable-background:new 0 0 256 224;" width="100%" height="100%" xml:space="preserve">
