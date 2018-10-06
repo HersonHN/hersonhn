@@ -1,5 +1,7 @@
 
-<title>HersonHN - {{ page.title | title }}</title>
+<title>
+  {{ hexo.config.title }} {% if page.title %} - {{ page.title | title }} {% endif %}
+</title>
 
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width,initial-scale=1">

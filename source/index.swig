@@ -1,5 +1,5 @@
 ---
-title: Home
+title:
 name: index
 date: 2018-10-4 18:00:00
 jsFiles:
