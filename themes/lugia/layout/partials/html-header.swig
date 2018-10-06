@@ -9,11 +9,11 @@
 <meta name="description" content="Herson Salinas' webste">
 <meta name="robots" content="index,follow">
 
-<link rel="stylesheet" href="/assets/scss/master.css">
-<link rel="stylesheet" href="/assets/css/fontello/css/fontello-embedded.css">
+<link rel="stylesheet" href="/assets/scss/master.css?{{ version() }}">
+<link rel="stylesheet" href="/assets/css/fontello/css/fontello-embedded.css?{{ version() }}">
 
 {% for fileName in page.cssFiles %}
-<link rel="stylesheet" href="{{ fileName }}">
+<link rel="stylesheet" href="{{ fileName }}?{{ version() }}">
 {% endfor %}
 
 {% include 'google-analitics.swig' %}

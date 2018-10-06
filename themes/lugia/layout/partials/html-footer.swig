@@ -1,4 +1,4 @@
 
 {% for fileName in page.jsFiles %}
-  <script src="{{ fileName }}"></script>
+  <script src="{{ fileName }}??{{ version() }}"></script>
 {% endfor %}
