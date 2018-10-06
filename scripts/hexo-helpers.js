@@ -12,16 +12,21 @@ function init() {
   registerHelpers();
 }
 
+
 function declareConstants() {
   CONSTANTS.APP_URL = appURL();
   CONSTANTS.ENV = enviroment();
   CONSTANTS.GIT_ID = gitId();
 }
 
+
 function registerHelpers() {
-  hexo.extend.helper.register('env',     () => CONSTANTS.ENV);  
-  hexo.extend.helper.register('version', () => `v=${CONSTANTS.GIT_ID}`);
-  hexo.extend.helper.register('app_url', () => CONSTANTS.APP_URL);
+  hexo.extend.helper.register('env_name', () => CONSTANTS.ENV);
+  hexo.extend.helper.register('app_url',  () => CONSTANTS.APP_URL);
+  hexo.extend.helper.register('git_id',   () => CONSTANTS.GIT_ID);
+  hexo.extend.helper.register('version',  () => `v=${CONSTANTS.GIT_ID}`);
+  
+  hexo.extend.helper.register('env', getEnviromentVariable);
 }
 
 
@@ -70,4 +75,13 @@ function enviroment() {
 function searchInArray(list, initialCharacter) {
   var found = list.findIndex((term) => term.startsWith(initialCharacter));
   return found > -1;
+}
+
+
+function getEnviromentVariable(name) {
+  let NAME = name.toUpperCase();
+  if (NAME != name) {
+    console.warn('Enviroment variable', name, 'called from hexo helper env() is not uppercase');
+  }
+  return process.env[name];
 }
