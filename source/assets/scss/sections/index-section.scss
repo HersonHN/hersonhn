@@ -1,11 +1,12 @@
 
 .index-section {
-  $base-width: 500px;
+  padding: 2rem;
+  $base-width: 450px;
 
   .logo-container {
     max-width: $base-width;
     display: block;
-    margin: 50px auto;
+    margin: auto;
     position: relative;
     overflow: hidden;
     background-color: black;
