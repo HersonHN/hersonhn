@@ -1,12 +1,38 @@
 'use strict';
 
-hexo.extend.helper.register('env', function () {
-  return enviroment();
-});
+const { execSync } = require('child_process');
+const CONSTANTS = {};
 
 
-hexo.extend.helper.register('app_url', function () {
+init();
 
+
+function init() {
+  declareConstants();
+  registerHelpers();
+}
+
+function declareConstants() {
+  CONSTANTS.APP_URL = appURL();
+  CONSTANTS.ENV = enviroment();
+  CONSTANTS.GIT_ID = gitId();
+}
+
+function registerHelpers() {
+  hexo.extend.helper.register('env',     () => CONSTANTS.ENV);  
+  hexo.extend.helper.register('version', () => `v=${CONSTANTS.GIT_ID}`);
+  hexo.extend.helper.register('app_url', () => CONSTANTS.APP_URL);
+}
+
+
+function gitId() {
+  let id = execSync('git rev-parse --short HEAD');
+  id = id.toString().trim();
+  return id;
+}
+
+
+function appURL() {
   let env = enviroment();
   // configuration from _config.yml
   let APP = hexo.config.APP;
@@ -14,12 +40,10 @@ hexo.extend.helper.register('app_url', function () {
   let url = APP[env];
 
   return url;
-
-});
+}
 
 
 function enviroment() {
-
   // actual enviroment
   // if running `hexo generate` =>  production
   // if running `hexo server`   =>  local
@@ -40,7 +64,6 @@ function enviroment() {
   let env = envParam || envOriginal;
 
   return env;
-
 }
 
 
