@@ -10,8 +10,7 @@ cssFiles:
 ---
 
 {% block content %}
-
-  <main class="index-section">
+  <section class="index-section">
     <section class="logo-container">
       <canvas></canvas>
       <svg class="logo" version="1.1" id="logo_inverse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -23,6 +22,5 @@ cssFiles:
     </section>
 
     <p class="center"><a target="_blank" href="https://news.herson.hn/">RSS Reader</a></p>
-  </main>
-
+  </section>
 {% endblock %}
