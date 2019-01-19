@@ -3,6 +3,10 @@
   padding: 2rem;
   $base-width: 450px;
 
+  p {
+    padding-bottom: 1rem;
+  }
+
   .logo-container {
     max-width: $base-width;
     display: block;

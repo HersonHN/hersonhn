@@ -7,7 +7,7 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "bulid": "hexo generate",
+    "build": "hexo generate",
     "publish": "hexo generate && now && now alias"
   },
   "dependencies": {

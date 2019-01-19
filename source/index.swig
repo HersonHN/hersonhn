@@ -22,5 +22,6 @@ cssFiles:
     </section>
 
     <p class="center"><a target="_blank" href="https://news.herson.hn/">RSS Reader</a></p>
+    <p class="center"><a target="_blank" href="https://page-x-of-365.tumblr.com/">Listening to 365 new albums on 2019</a></p>
   </section>
 {% endblock %}
