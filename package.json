@@ -4,19 +4,19 @@
   "description": "Herson Salinas' Website",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.9.0"
   },
   "scripts": {
     "build": "hexo generate",
     "publish": "hexo generate && now && now alias"
   },
   "dependencies": {
-    "hexo": "^3.7.0",
+    "hexo": "^3.9.0",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-category": "^0.1.3",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-renderer-swig": "^1.1.0",
