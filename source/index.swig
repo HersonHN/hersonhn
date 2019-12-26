@@ -8,7 +8,6 @@ jsFiles:
 cssFiles:
   - /assets/scss/sections/index-section.css
 ---
-
 {% block content %}
   <section class="index-section">
     <section class="logo-container">
