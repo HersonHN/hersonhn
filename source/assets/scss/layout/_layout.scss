@@ -14,10 +14,7 @@ html, body {
 #page-content {
   display: flex;
   flex-flow: column nowrap;
-  background: white;
-  color: #333;
   min-height: 100%;
-
 
   & > section {
     flex: 1 1;

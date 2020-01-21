@@ -1,0 +1,20 @@
+
+.bg-color   { background-color: $background; }
+.fg-color   { color: $foreground; }
+
+.bg-color-i { background-color: $foreground; }
+.fg-color-i { color: $background; }
+
+.fill-with-bg { fill: $background; }
+
+
+
+@media (prefers-color-scheme: dark) {
+    .bg-color   { background-color: $foreground !important; }
+    .fg-color   { color: $background !important; }
+    
+    .bg-color-i { background-color: $background !important; }
+    .fg-color-i { color: $foreground !important; }
+
+    .fill-with-bg { fill: $foreground !important; }
+}
