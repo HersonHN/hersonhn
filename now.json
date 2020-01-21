@@ -1,17 +1,9 @@
 {
-  "version": 1,
   "name": "hersonhn",
   "type": "static",
   "public": true,
-  "static": {
-    "public": "public",
-    "directoryListing": false 
-  },
   "alias": [
     "www.herson.hn",
     "herson.hn"
-  ],
-  "files": [
-    "public"
   ]
 }
