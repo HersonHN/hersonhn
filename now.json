@@ -5,7 +5,7 @@
   "public": true,
   "static": {
     "public": "public",
-    "directoryListing": false
+    "directoryListing": false 
   },
   "alias": [
     "www.herson.hn",
