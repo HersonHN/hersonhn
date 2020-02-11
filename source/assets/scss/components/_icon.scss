@@ -12,9 +12,9 @@
 }
 
 .icon:hover {
-  color: inherit;
+  @extend .fg-color;
   i {
     background: crimson;
-    color: white;
+    @extend .fg-color-i;
   }
 }
