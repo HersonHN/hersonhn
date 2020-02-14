@@ -3,5 +3,5 @@ $foreground: #16161d; // Eigengrau
 $background: #FFFFFF;
 
 $middlecolor: mix($background, $foreground, 85%);
-$middlecolor_i: mix($foreground, $background, 85%);
+$middlecolor_i: mix($foreground, #000, 50%);
 
