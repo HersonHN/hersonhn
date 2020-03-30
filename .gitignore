@@ -156,3 +156,4 @@ $RECYCLE.BIN/
 public/
 db.json
 .now
+package-lock.json
