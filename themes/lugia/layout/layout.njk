@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include 'partials/html-header.njk' %}
+</head>
+<body>
+<main id="page-content" class="bg-color fg-color">
+{% include 'partials/site-header.njk' %}
+{{page.content}}
+{% include 'partials/site-footer.njk' %}
+</main>
+{% include 'partials/html-footer.njk' %}
+</body>
+</html>

@@ -10,4 +10,4 @@
 {% for fileName in page.cssFiles %}
 <link rel="stylesheet" href="{{ fileName }}?{{ version() }}">
 {% endfor %}
-{% include 'google-analitics.swig' %}
+{% include 'partials/google-analitics.njk' %}
