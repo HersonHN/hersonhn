@@ -3,7 +3,13 @@
 <head>
 {% include 'partials/html-header.njk' %}
 </head>
-<body class="system-theme">
+<body class="
+  {% if page.theme %}
+    {{page.theme}}-theme
+  {% else %}
+    system-theme
+  {% endif %}
+">
 <section id="global-content">
 {% include 'partials/site-header.njk' %}
 <main>

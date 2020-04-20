@@ -1,0 +1,62 @@
+---
+title: the link
+theme: light
+---
+<section class="content">
+  <p>This page takes a <i>[redacted]</i> URL and return the target link</p>
+
+  <p>
+    <label for="input">URL:</label>
+    <input id="input">
+    <button id="paste">Paste</button>
+  </p>
+  <p>
+    <textarea id="output" rows="7"></textarea>
+  </p>
+  <p>
+    <button id="copy">Copy</button>
+  </p>
+</section>
+
+
+<style>
+  #url { width: 200px; }
+  textarea { background: #eee; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('input');
+  const output = document.getElementById('output');
+  const btnCopy = document.getElementById('copy');
+  const btnPaste = document.getElementById('paste');
+
+  init();
+
+  function init() {
+    input.addEventListener('change', transformURL);
+    btnCopy.addEventListener('click', copyURL);
+    btnPaste.addEventListener('click', pasteURL);
+  }
+
+  function transformURL() {
+    let origin = input.value;
+    let [_, encoded] = origin.split('?url=');
+    if (!encoded) return;
+
+    let decoded = decodeURIComponent(encoded);
+    output.value = decoded;
+  }
+
+  function pasteURL() {
+    return navigator.clipboard.readText()
+      .then(text => input.value = text)
+      .then(transformURL)
+  }
+
+  function copyURL() {
+    output.select();
+    document.execCommand('copy');
+  }
+})
+</script>

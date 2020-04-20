@@ -2,18 +2,18 @@ $foreground: #16161d; // Eigengrau
 $background: #FFFFFF;
 
 @mixin color-theme($fg, $bg, $link, $link-hover) {
-  color: $fg !important;
-  background-color: $bg !important;
+  color: $fg;
+  background-color: $bg;
 
-  a[href]       { color: $link !important };
-  a[href]:hover { color: $link-hover !important };
+  a[href]       { color: $link };
+  a[href]:hover { color: $link-hover };
 
-  .fg-color     { color: $fg !important }
-  .bg-color     { background-color: $bg !important }
-  .fill-with-bg { fill: $bg !important }
+  .fg-color     { color: $fg }
+  .bg-color     { background-color: $bg }
+  .fill-with-bg { fill: $bg }
 
-  .fg-color-i   { color: $bg !important }
-  .bg-color-i   {  background-color: $fg !important }
+  .fg-color-i   { color: $bg }
+  .bg-color-i   {  background-color: $fg }
 }
 
 

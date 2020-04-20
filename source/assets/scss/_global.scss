@@ -8,10 +8,19 @@ a:hover {
   color: crimson;
 }
 
-.center {
-  text-align: center;
-}
-
 p {
   line-height: 1.5em;
+}
+
+input, button, textarea {
+  padding: .5rem;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+}
+
+.center {
+  text-align: center;
 }
