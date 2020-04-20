@@ -1,20 +1,42 @@
+$foreground: #16161d; // Eigengrau
+$background: #FFFFFF;
 
-.bg-color   { background-color: $background; }
-.fg-color   { color: $foreground; }
+@mixin color-theme($fg, $bg, $link, $link-hover) {
+  color: $fg !important;
+  background-color: $bg !important;
 
-.bg-color-i { background-color: $foreground; }
-.fg-color-i { color: $background; }
+  a[href]       { color: $link !important };
+  a[href]:hover { color: $link-hover !important };
 
-.fill-with-bg { fill: $background; }
+  .fg-color     { color: $fg !important }
+  .bg-color     { background-color: $bg !important }
+  .fill-with-bg { fill: $bg !important }
 
-
-
-@media (prefers-color-scheme: dark) {
-    .bg-color   { background-color: $foreground !important; }
-    .fg-color   { color: $background !important; }
-    
-    .bg-color-i { background-color: $background !important; }
-    .fg-color-i { color: $foreground !important; }
-
-    .fill-with-bg { fill: $foreground !important; }
+  .fg-color-i   { color: $bg !important }
+  .bg-color-i   {  background-color: $fg !important }
 }
+
+
+@mixin light-theme {
+  @include color-theme(
+    $fg: $foreground,
+    $bg: $background,
+    $link: $foreground,
+    $link-hover: crimson
+  );
+}
+
+@mixin dark-theme {
+  @include color-theme(
+    $fg: $background,
+    $bg: $foreground,
+    $link: $background,
+    $link-hover: crimson
+  );
+}
+
+@media (prefers-color-scheme: light) { .system-theme { @include light-theme; } }
+@media (prefers-color-scheme: dark)  { .system-theme { @include dark-theme; } }
+
+.light-theme { @include light-theme; }
+.dark-theme  { @include dark-theme; }

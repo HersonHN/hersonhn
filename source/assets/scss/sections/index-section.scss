@@ -1,13 +1,14 @@
 
 .index-section {
   padding: 2rem;
-  $base-width: 450px;
 
   p {
     padding-bottom: 1rem;
   }
 
   .logo-container {
+    $base-width: 450px;
+
     max-width: $base-width;
     display: block;
     margin: auto;

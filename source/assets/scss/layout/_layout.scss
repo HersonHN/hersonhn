@@ -11,13 +11,20 @@ html, body {
 }
 
 
-#page-content {
+#global-content {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100%;
+  font-family: verdana, sans-serif;
 
-  & > section {
+  & > main {
     flex: 1 1;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem 0;
   }
 }
 
