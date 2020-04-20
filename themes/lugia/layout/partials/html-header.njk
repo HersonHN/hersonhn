@@ -5,9 +5,9 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name="description" content="Herson Salinas' webste">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="/assets/scss/master.css?{{ version() }}">
-<link rel="stylesheet" href="/assets/css/fontello/css/fontello-embedded.css?{{ version() }}">
+<link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
+<link rel="stylesheet" href="/assets/css/fontello/css/fontello-embedded.css?v={{ moment().unix() }}">
 {% for fileName in page.cssFiles %}
-<link rel="stylesheet" href="{{ fileName }}?{{ version() }}">
+<link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
 {% endfor %}
 {% include 'partials/google-analitics.njk' %}
