@@ -13,6 +13,7 @@ p {
 }
 
 input, button, textarea {
+  font-size: .9rem;
   padding: .5rem;
 }
 
@@ -23,4 +24,8 @@ textarea {
 
 .center {
   text-align: center;
+}
+
+.right {
+  text-align: right;
 }
