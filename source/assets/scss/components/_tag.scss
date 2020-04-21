@@ -1,11 +1,14 @@
 
+$tag-light: lightyellow;
+$tag-dark: #efd32a;
+
 .tag {
   $tag-base-size: 0.75rem;
   $radius: 5px;
 
   display: inline-block;
   position: relative;
-  background: lightyellow;
+  background: $tag-dark;
   padding: 0 $tag-base-size;
   line-height: $tag-base-size * 1.5;
   font-size: $tag-base-size;
@@ -25,7 +28,7 @@
     left: $tag-base-size * -.3;
     top: $tag-base-size * .25;
     transform: rotate(45deg);
-    background: lightyellow;
+    background: $tag-dark;
     border-bottom-left-radius: $radius;
   }
 
@@ -37,7 +40,28 @@
     height: $tag-base-size * .5;
     top: $tag-base-size * .5;
     left: 0;
-    background: #efd32a;
+    background: $tag-light;
     border-radius: 100%;
   }
 }
+
+
+@mixin tag-light-theme {
+  .tag        { background: $tag-dark; }
+  .tag:before { background: $tag-dark; }
+  .tag:after  { background: white; }
+}
+
+@mixin tag-dark-theme {
+  .tag        { background: $tag-light; }
+  .tag:before { background: $tag-light; }
+  .tag:after  { background: black; }
+}
+
+.light-theme { @include tag-light-theme; }
+.dark-theme  { @include tag-dark-theme; }
+
+@media (prefers-color-scheme: light) { .system-theme { @include tag-light-theme; } }
+@media (prefers-color-scheme: dark)  { .system-theme { @include tag-dark-theme; } }
+
+

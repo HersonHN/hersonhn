@@ -28,6 +28,8 @@ highlight:
   wrap: true
 
 meta_generator: false
+filename_case: 1
+external_link.enable: true
 
 feed:
   type: atom
