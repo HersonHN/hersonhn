@@ -13,7 +13,8 @@
 <section id="global-content">
 {% include 'partials/site-header.njk' %}
 <main>
-{{page.content}}
+{% block content %}
+{% endblock %}
 </main>
 {% include 'partials/site-footer.njk' %}
 </secion>

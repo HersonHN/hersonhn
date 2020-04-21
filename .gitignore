@@ -157,3 +157,4 @@ public/
 db.json
 .now
 package-lock.json
+test-*.md

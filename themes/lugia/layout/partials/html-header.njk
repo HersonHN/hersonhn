@@ -1,6 +1,8 @@
 <title>
-  {% if page.title %}
-    {{page.title | title}}
+  {% if __title %}
+    {{ __title }}
+  {% elif page.title %}
+    {{ page.title }}
   {% else %}
     HersonHN
   {% endif %}
@@ -14,4 +16,8 @@
 {% for fileName in page.cssFiles %}
 <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
 {% endfor %}
+
+{% if site.posts.length %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+{% endif %}
 {% include 'partials/google-analitics.njk' %}

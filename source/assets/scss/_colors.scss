@@ -1,7 +1,7 @@
 $foreground: #16161d; // Eigengrau
 $background: #FFFFFF;
 
-@mixin color-theme($fg, $bg, $link, $link-hover) {
+@mixin color-theme($fg, $bg, $bg-dark, $link, $link-hover) {
   color: $fg;
   background-color: $bg;
 
@@ -13,7 +13,9 @@ $background: #FFFFFF;
   .fill-with-bg { fill: $bg }
 
   .fg-color-i   { color: $bg }
-  .bg-color-i   {  background-color: $fg }
+  .bg-color-i   { background-color: $fg }
+
+  .bg-dark      { background-color: $bg-dark }
 }
 
 
@@ -21,6 +23,7 @@ $background: #FFFFFF;
   @include color-theme(
     $fg: $foreground,
     $bg: $background,
+    $bg-dark: $foreground,
     $link: $foreground,
     $link-hover: crimson
   );
@@ -30,6 +33,7 @@ $background: #FFFFFF;
   @include color-theme(
     $fg: $background,
     $bg: $foreground,
+    $bg-dark: black,
     $link: $background,
     $link-hover: crimson
   );

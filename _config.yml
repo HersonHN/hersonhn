@@ -10,6 +10,34 @@ APP:
   production: https://www.herson.hn
   local: http://localhost:8000
 
+
+url: https://herson.hn
+root: /
+permalink: :year/:title/
+
+default_layout: index
+external_link:
+  enable: true
+archive_dir: posts
+
+highlight:
+  enable: true
+  auto_detect: true
+  line_number: false
+  wrap: true
+
+meta_generator: true
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: false
+  order_by: -date
+  autodiscovery: true
+
+
+# compilation specifics
 node_sass:
   outputStyle: compressed
   precision: 5
@@ -22,6 +50,8 @@ skip_render:
   - assets/src/*
   - assets/data/*
 
+exclude_generator:
+  - index
 
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

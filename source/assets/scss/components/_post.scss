@@ -1,0 +1,13 @@
+#global-content .post.content {
+  padding-bottom: 4rem;
+  
+  .title {
+    margin-bottom: 0;
+    font-size: 1.7rem;
+  }
+  .title + small {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+}
