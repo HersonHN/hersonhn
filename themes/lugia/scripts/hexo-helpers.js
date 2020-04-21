@@ -27,6 +27,7 @@ function registerHelpers() {
   hexo.extend.helper.register('version',  () => `v=${CONSTANTS.GIT_ID}`);
   
   hexo.extend.helper.register('env', getEnviromentVariable);
+  hexo.extend.helper.register('print', print);
 }
 
 
@@ -84,4 +85,9 @@ function getEnviromentVariable(name) {
     console.warn('Enviroment variable', name, 'called from hexo helper env() is not uppercase');
   }
   return process.env[name];
+}
+
+function print(obj) {
+  console .log(obj);
+  return '{printed}'
 }

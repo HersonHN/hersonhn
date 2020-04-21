@@ -2,12 +2,20 @@
   padding-bottom: 4rem;
   
   .title {
-    margin-bottom: 0;
-    font-size: 1.7rem;
-  }
-  .title + small {
-    display: block;
     margin-bottom: 2rem;
+
+    h1 {
+      margin-bottom: 0;
+      font-size: 1.7rem;
+    }
+
+    .second-line {
+      line-height: 2rem;
+    }
+
+    small {
+      display: inline-block;
+    }
   }
 
 }

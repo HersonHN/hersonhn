@@ -1,0 +1,44 @@
+
+.tag {
+  $tag-base-size: 0.75rem;
+  $radius: 5px;
+
+  display: inline-block;
+  position: relative;
+  background: lightyellow;
+  padding: 0 $tag-base-size;
+  line-height: $tag-base-size * 1.5;
+  font-size: $tag-base-size;
+  margin-left: $tag-base-size;
+  border-radius: $radius;
+
+  a {
+    color: black !important;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $tag-base-size;
+    height: $tag-base-size;
+    left: $tag-base-size * -.3;
+    top: $tag-base-size * .25;
+    transform: rotate(45deg);
+    background: lightyellow;
+    border-bottom-left-radius: $radius;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $tag-base-size * .5;
+    height: $tag-base-size * .5;
+    top: $tag-base-size * .5;
+    left: 0;
+    background: #efd32a;
+    border-radius: 100%;
+  }
+}

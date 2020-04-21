@@ -19,6 +19,7 @@ default_layout: index
 external_link:
   enable: true
 archive_dir: posts
+tags_dir: tags
 
 highlight:
   enable: true
@@ -26,7 +27,7 @@ highlight:
   line_number: false
   wrap: true
 
-meta_generator: true
+meta_generator: false
 
 feed:
   type: atom
