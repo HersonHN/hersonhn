@@ -7,9 +7,9 @@
     <div class="second-line">
       <small class="gray">{{ moment(page.date).format('YYYY-MM-DD') }}</small>
         {% for tag in page.tags.data %}
-        <span class="tag">
-          <a href="/{{ tag.path }}">{{ tag.name }}</a>
-        </span>
+        <a class="tag" href="/{{ tag.path }}">
+          {{ tag.name }}
+        </a>
         {% endfor %}
     </div>
   </div>

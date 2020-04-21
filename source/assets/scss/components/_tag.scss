@@ -12,10 +12,9 @@
   margin-left: $tag-base-size;
   border-radius: $radius;
 
-  a {
-    color: black !important;
-    text-decoration: none;
-  }
+  color: black !important;
+  text-decoration: none;
+
 
   &:before {
     content: '';
