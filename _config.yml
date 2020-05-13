@@ -50,8 +50,7 @@ skip_render:
   - assets/css/*
   - assets/js/*
   - assets/dist/*
-  - assets/src/*
-  - assets/data/*
+  - assets/dist/**/*
 
 exclude_generator:
   - index
