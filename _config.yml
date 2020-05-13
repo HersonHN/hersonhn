@@ -25,7 +25,8 @@ highlight:
   enable: true
   auto_detect: true
   line_number: false
-  wrap: true
+  wrap: false
+  hljs: true
 
 meta_generator: false
 filename_case: 1

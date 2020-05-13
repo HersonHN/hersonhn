@@ -21,6 +21,10 @@ p {
   line-height: 1.5em;
 }
 
+pre {
+  font-size: 1.3rem;
+}
+
 input, button, textarea {
   font-size: .9rem;
   padding: .5rem;
@@ -41,4 +45,13 @@ textarea {
 
 .gray {
   color: #666;
+}
+
+.hljs {
+  width: 100%;
+  padding: 1rem;
+}
+
+.secondary-title {
+  margin-top: 6rem;
 }

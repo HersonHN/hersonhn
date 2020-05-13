@@ -1,5 +1,10 @@
 {% extends "_layout.njk" %}
 
+{# Check for a ``` in the markdown content, that will load the code hilight css #}
+{% if (page._content.indexOf('```') > -1) %}
+  {% set _hascode = true %}
+{% endif %}
+
 {% block content %}
 <section class="post content">
   <div class="title">

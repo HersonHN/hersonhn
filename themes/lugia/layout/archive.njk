@@ -1,24 +1,37 @@
 {% extends "_layout.njk" %}
 
+
 {% if page.tag %}
   {% set __title = "Tag: " + page.tag %}
 {% else %}
   {% set __title = "All Posts" %}
 {% endif %}
 
+
 {% block content %}
-<section class="content">
+<section class="content archive-section">
+  <h2 class="main-title">{{ __title }}</h2>
 
-<h2>{{ __title }}</h2>
-
-{% for post in page.posts.data %}
-<p>
-  <small>{{ moment(post.date).format('YYYY-MM-DD') }}</small>
-  <a href="/{{ post.path }}">{{ post.title }}</a>
-</p>
-{% else %}
-<p>No posts yet.</p>
-{% endfor %}
+  {% for post in page.posts.data %}
+    <p>
+      <small>{{ moment(post.date).format('YYYY-MM-DD') }}</small>
+      <a href="/{{ post.path }}">{{ post.title }}</a>
+    </p>
+    {% else %}
+    <p>No posts yet.</p>
+  {% endfor %}
 
 </section>
+{% endblock %}
+
+
+{% block postcontent %}
+  <div class="content">
+    <small>Posts by tags:</small>
+    {% for tag in site.tags.data %}
+    <a class="tag" href="/{{ tag.path }}">
+      {{ tag.name }}
+    </a>
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -10,12 +10,17 @@
     system-theme
   {% endif %}
 ">
+
 <section id="global-content">
 {% include 'partials/site-header.njk' %}
 <main>
 {% block content %}
 {% endblock %}
 </main>
+<section>
+{% block postcontent %}
+{% endblock %}
+<section>
 {% include 'partials/site-footer.njk' %}
 </secion>
 {% include 'partials/html-footer.njk' %}
