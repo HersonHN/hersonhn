@@ -47,11 +47,22 @@ textarea {
   color: #666;
 }
 
-.hljs {
-  width: 100%;
-  padding: 1rem;
+.date {
+  color: #666;
+  display: inline-block;
+  min-width: 5rem;
+  font-size: .75rem;
+}
+
+.tags {
+  line-height: 2rem;
 }
 
 .secondary-title {
   margin-top: 6rem;
+}
+
+.hljs {
+  width: 100%;
+  padding: 1rem;
 }

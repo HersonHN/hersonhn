@@ -1,0 +1,13 @@
+{% if site.tags.data.length %}
+  <nav class="content tags">
+    <small>Posts by tags:</small>
+    {% for tag in site.tags.data | sort(false, true, 'name') %}
+    <a class="tag" href="/{{ tag.path }}">
+      {{ tag.name }}
+    </a>
+    {% endfor %}
+    <a class="tag" href="/posts">
+      ALL POSTS
+    </a>
+  </nav>
+{% endif %}

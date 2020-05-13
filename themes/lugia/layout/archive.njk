@@ -13,9 +13,13 @@
   <h2 class="main-title">{{ __title }}</h2>
 
   {% for post in page.posts.data %}
-    <p>
-      <small>{{ moment(post.date).format('YYYY-MM-DD') }}</small>
-      <a href="/{{ post.path }}">{{ post.title }}</a>
+    <p class="flex">
+      <span class="flex-shrink">
+        <span class="date">{{ moment(post.date).format('YYYY-MM-DD') }}</span>
+      </span>
+      <span class="flex-grow">
+        <a href="/{{ post.path }}">{{ post.title }}</a>
+      </span>
     </p>
     {% else %}
     <p>No posts yet.</p>
@@ -26,12 +30,5 @@
 
 
 {% block postcontent %}
-  <div class="content">
-    <small>Posts by tags:</small>
-    {% for tag in site.tags.data %}
-    <a class="tag" href="/{{ tag.path }}">
-      {{ tag.name }}
-    </a>
-    {% endfor %}
-  </div>
+  {% include "partials/tags.njk" %}
 {% endblock %}
