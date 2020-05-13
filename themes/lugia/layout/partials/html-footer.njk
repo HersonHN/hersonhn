@@ -1,3 +1,4 @@
+<script src="/assets/dist/global.js?v={{ moment().unix() }}"></script>
 {% for fileName in page.jsFiles %}
 <script src="{{ fileName }}?v={{ moment().unix() }}"></script>
 {% endfor %}
