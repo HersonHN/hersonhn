@@ -1,19 +1,15 @@
 <header class="site-header">
-  {% if site.posts.length %}
   <div class="flex">
     <div class="flex-grow">
+      {% if site.posts.length %}
       <nav class="center">
         <a href="/">Home</a> |
         <a href="/posts">Posts</a>
       </nav>
+      {% endif %}
     </div>
     <div class="flex-shrink">
-      <select id="site-theme-selector" alt="Theme">
-        <option value="system-theme">Auto</option>
-        <option value="light-theme">Light</option>
-        <option value="dark-theme">Dark</option>
-      </select>
+      <change-theme></change-theme>
     </div>
   </div>
-  {% endif %}
 </header>

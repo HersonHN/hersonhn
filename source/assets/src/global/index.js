@@ -1,4 +1,8 @@
 
-import { ThemeSelector } from './theme-selector/theme-selector';
+import { Vue, ChangeTheme } from 'change-theme-button';
 
-let ts = new ThemeSelector();
+new Vue({
+  components: {
+    ChangeTheme
+  }
+}).$mount('.site-header')
