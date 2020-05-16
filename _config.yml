@@ -23,7 +23,7 @@ tags_dir: tags
 
 highlight:
   enable: true
-  auto_detect: true
+  auto_detect: false
   line_number: false
   wrap: false
   hljs: true

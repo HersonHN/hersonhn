@@ -18,4 +18,10 @@
     }
   }
 
+  article {
+    > p, > ul, > ol {
+      margin-bottom: 1.5rem;
+    }
+  }
+
 }
