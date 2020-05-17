@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-{% include 'partials/html-header.njk' %}
+{%- include 'partials/html-header.njk' -%}
 </head>
-<body class="
-  {% if page.theme %}
-    {{page.theme}}-theme
-  {% else %}
-    system-theme
-  {% endif %}
-">
+<body class="system-theme">
 
-<section id="global-content">
-{% include 'partials/site-header.njk' %}
+<section id="global-content"
+  {%- if page.forceTheme -%}
+    class="{{page.forceTheme}}-theme"
+  {%- endif -%}
+>
+{%- include 'partials/site-header.njk' -%}
 <main>
-{% block content %}
-{% endblock %}
+{%- block content -%}
+{%- endblock -%}
 </main>
 <section>
-{% block postcontent %}
-{% endblock %}
+{%- block postcontent -%}
+{%- endblock -%}
 <section>
-{% include 'partials/site-footer.njk' %}
+{%- include 'partials/site-footer.njk' -%}
 </secion>
-{% include 'partials/html-footer.njk' %}
+{%- include 'partials/html-footer.njk' -%}
 </body>
 </html>

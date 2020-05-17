@@ -1,6 +1,6 @@
 ---
 title: the torrent link
-theme: light
+forceTheme: light
 ---
 <section class="content mono">
   <h1>The Torrent Link</h1>
@@ -21,9 +21,10 @@ theme: light
     <button id="paste">Paste</button>
   </p>
   <p>
-    <textarea id="output" rows="7"></textarea>
+    <textarea id="output" rows="7" readonly></textarea>
   </p>
   <p class="right">
+    <button id="open">Open URL</button>
     <button id="copy">Copy</button>
   </p>
 </section>
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const output = document.getElementById('output');
   const btnCopy = document.getElementById('copy');
   const btnPaste = document.getElementById('paste');
+  const btnOpen = document.getElementById('open');
 
   init();
 
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     input.addEventListener('change', transformURL);
     btnCopy.addEventListener('click', copyURL);
     btnPaste.addEventListener('click', pasteURL);
+    btnOpen.addEventListener('click', openURL);
   }
 
   function transformURL() {
@@ -67,6 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function copyURL() {
     output.select();
     document.execCommand('copy');
+  }
+
+  function openURL() {
+    if (!output.value) return;
+    window.open(output.value);
   }
 })
 </script>

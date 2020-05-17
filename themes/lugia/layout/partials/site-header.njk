@@ -9,7 +9,9 @@
       {% endif %}
     </div>
     <div class="flex-shrink">
-      <change-theme></change-theme>
+      {% if not page.forceTheme -%}
+        <change-theme></change-theme>
+      {% endif -%}
     </div>
   </div>
 </header>
