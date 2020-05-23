@@ -32,6 +32,9 @@ meta_generator: false
 filename_case: 1
 external_link.enable: true
 
+marked:
+  smartypants: false
+
 feed:
   type: atom
   path: atom.xml

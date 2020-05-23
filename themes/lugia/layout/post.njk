@@ -4,6 +4,9 @@
 {% if (page._content.indexOf('```') > -1) %}
   {% set _hascode = true %}
 {% endif %}
+{% if (page._content.indexOf('gist.github.com') > -1) %}
+  {% set _hasgist = true %}
+{% endif %}
 
 {% block content %}
 <section class="post content">

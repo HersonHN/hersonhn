@@ -1,4 +1,4 @@
-title: "Goku -or- The Time I Was Too Lazy to Learn sed Syntax"
+title: "The Time I Was Too Lazy to Learn sed Syntax"
 date: 2020-05-15
 tags:
   - ruby
@@ -16,7 +16,7 @@ That was an easy solution for many of the series I had, but there was a series w
 
 What would be the best and easiest solutions? ... That’s right, create a script in ruby to do the task and run it on the folder.
 
-But I decided to make the script reusable, not only for that folder, and not only for renaming videos, and not only for “renaming” things. I program it to read the input from `stdin`, make some changes for the input \*line by line\*, and return the output to `stdout`. 
+But I decided to make the script reusable, not only for that folder, and not only for renaming videos, and not only for "renaming" things. I program it to read the input from `stdin`, make some changes for the input \*line by line\*, and return the output to `stdout`. 
 
 The script flow would be simplified as:
 
@@ -30,14 +30,14 @@ The script flow would be simplified as:
 
 Ruby was an excellent choice for the task, mainly because Ruby has a lot of ways to declare strings and that would be useful to avoid bugs when parsing lines with mixed single and double-quotes. The idea I had for the final product would be something like this:
 
-```
-ls *.mp4 | COMMAND ‘mv “#{line}” “#{line.downcase}”‘ | sh
+```bash
+ls *.mp4 | COMMAND 'mv "#{line}" "#{line.downcase}"' | sh
 ```
 
 And of course, the command would be useful for other tasks, for example, take just the commit id from `git log` and save them to a file:
 
-```
-git log --format=oneline | COMMAND “#{line[0..40]}” > file.txt
+```bash
+git log --format=oneline | COMMAND "#{line[0..40]}" > file.txt
 ```
 
 <small>Those two examples are from real life (I looked at on my `.zsh_history` searching for examples)</small>

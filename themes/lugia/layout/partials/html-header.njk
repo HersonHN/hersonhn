@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
 {% endfor -%}
 {%- if _hascode -%}
-  <link rel="stylesheet" href="/assets/css/highlight/gruvbox-dark.css">
+  <link rel="stylesheet" href="/assets/css/highlight/tomorrow-night.css">
+{%- endif -%}
+{%- if _hasgist -%}
+  <link rel="stylesheet" href="/assets/scss/gist/gist.css">
 {%- endif -%}
 {%- if site.posts.length -%}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">

@@ -1,0 +1,10 @@
+
+@import '../../../../node_modules/gist-syntax-themes/stylesheets/tomorrow-night';
+
+.gist {
+  margin-bottom: 4rem;
+
+  .blob-code-inner {
+    font-size: .9rem !important;
+  }
+}
