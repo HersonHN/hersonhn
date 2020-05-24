@@ -5,23 +5,23 @@ $background: #FFFFFF;
   color: $fg;
   background-color: $bg;
 
-  a[href]       { color: $link };
-  a[href]:hover { color: $link-hover };
+  a[href]       { color: $link; }
+  a[href]:hover { color: $link-hover; }
 
-  .fg-color        { color: $fg }
-  .bg-color        { background-color: $bg }
-  .fill-with-bg    { fill: $bg !important } // This is for svg
-  .bg-color-border { border-color: $bg !important }
-  .fg-color-border { border-color: $fg !important }
-  .fg-color-invert { color: $bg !important }
-  .bg-color-invert { background-color: $fg !important }
+  .fg-color        { color: $fg; }
+  .bg-color        { background-color: $bg; }
+  .fill-with-bg    { fill: $bg !important; } // This is for svg
+  .bg-color-border { border-color: $bg !important; }
+  .fg-color-border { border-color: $fg !important; }
+  .fg-color-invert { color: $bg !important; }
+  .bg-color-invert { background-color: $fg !important; }
 
   // for dark backgrounds (or even darker when using a dark theme)
   .bg-dark {
     color: $fg-light;
     background-color: $bg-dark;
 
-    a[href] { color: $fg-light };
+    a[href] { color: $fg-light; }
   }
 }
 

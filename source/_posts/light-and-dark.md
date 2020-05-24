@@ -30,18 +30,74 @@ Using SASS or any other preprocessor, we can easily customize the coloring and a
 
 Currently, the CSS I'm using for coloring on this site is pretty simple:
 
-<script src="https://gist.github.com/HersonHN/9cb794ed4e28c770294eacf760369d86.js"></script>
+```scss
+$foreground: #16161d; // Eigengrau
+$background: #FFFFFF;
 
-The default color I'm using for the dark theme is [Eingrau](https://en.wikipedia.org/wiki/Eigengrau) instead of black (`#00000`), because I don't like full black backgrounds since too much contrast hurt my eyes. I also use `!important`  on the coloring instructions just in case I import a third party CSS which recolors the default tags.
+@mixin color-theme($fg, $bg, $bg-dark, $fg-light, $link, $link-hover) {
+  color: $fg;
+  background-color: $bg;
 
-<picture style="text-align: center">
-  <div class="flex" style="border: 3px solid white">
-    <div class="flex-grow" style="height: 10rem; padding: 1rem; color: white; background-color: #16161d">Eingrau</div>
-    <div class="flex-grow" style="height: 10rem; padding: 1rem; color: white; background-color: black">Black</div>
-  </div>
-  <legend>Eingrau vs Black</legend>
+  a[href]       { color: $link; }
+  a[href]:hover { color: $link-hover; }
+
+  .fg-color        { color: $fg; }
+  .bg-color        { background-color: $bg; }
+  .fill-with-bg    { fill: $bg !important; } // This is for svg
+  .bg-color-border { border-color: $bg !important; }
+  .fg-color-border { border-color: $fg !important; }
+  .fg-color-invert { color: $bg !important; }
+  .bg-color-invert { background-color: $fg !important; }
+
+  // for dark backgrounds (or even darker when using a dark theme)
+  .bg-dark {
+    color: $fg-light;
+    background-color: $bg-dark;
+
+    a[href] { color: $fg-light; }
+  }
+}
+
+
+@mixin light-theme {
+  @include color-theme(
+    $fg: $foreground,
+    $bg: $background,
+    $bg-dark: $foreground,
+    $fg-light: $background,
+    $link: $foreground,
+    $link-hover: crimson
+  );
+}
+
+@mixin dark-theme {
+  @include color-theme(
+    $fg: $background,
+    $bg: $foreground,
+    $bg-dark: black,
+    $fg-light: $background,
+    $link: $background,
+    $link-hover: crimson
+  );
+}
+
+@media (prefers-color-scheme: light) { .system-theme { @include light-theme; } }
+@media (prefers-color-scheme: dark)  { .system-theme { @include dark-theme; } }
+
+.light-theme { @include light-theme; }
+.dark-theme  { @include dark-theme; }
+```
+
+<br>
+
+The default color I'm using for the dark theme is [Eingrau][eingrau] instead of black (`#00000`), because I don't like full black backgrounds since too much contrast hurt my eyes. I also use `!important`  on the coloring instructions just in case I import a third party CSS which recolors the default tags.
+
+<picture>
+
+![Eingrau vs Black][eingrau-image]
+
+<legend>Eingrau vs Black</legend>
 </picture>
-
 
 For gray areas I tend to use semi-transparent backgrounds, so they can work on both white and dark pages, it's better to not use that many shades of gray because transparent colors can be tricky to work with.
 
@@ -57,3 +113,9 @@ It's important to keep the option to use other themes on the page, and not write
 
 
 The only downside using light and dark themes is that you have to test both independently, but that's not a surprise, isn't it?
+
+
+
+
+[eingrau]: https://en.wikipedia.org/wiki/Eigengrau
+[eingrau-image]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Eigengrau-vs-black.png/239px-Eigengrau-vs-black.png

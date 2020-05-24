@@ -44,6 +44,18 @@ textarea {
   border: none;
 }
 
+picture {
+  display: block;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .center {
   text-align: center;
 }
