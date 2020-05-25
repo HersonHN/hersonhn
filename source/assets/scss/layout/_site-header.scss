@@ -10,6 +10,7 @@
 
   &.banner {
     min-height: 25vw;
+    transition:  min-height 1s linear;
     background-position: center center;
     background-size: cover;
   }
@@ -18,5 +19,11 @@
     display: inline-block;
     padding: .5rem 1rem;
     border-radius: 10px;
+  }
+}
+
+@media (orientation: portrait) {
+  .site-header.banner {
+    min-height: 75vw;
   }
 }

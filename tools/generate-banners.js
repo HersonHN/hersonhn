@@ -67,11 +67,8 @@ function generateBanners(list, path) {
     const banner = fs.createWriteStream(bannerPath);
     const social = fs.createWriteStream(socialPath);
 
-    createCanvas({ name, width: 2500, height: 625, white: false })
-      .createPNGStream().pipe(banner);
-
-    createCanvas({ name, width: 1200,  height: 675, white: true })
-      .createPNGStream().pipe(social);
+    createCanvas({ name, width: 2500, height: 625, white: false }).createPNGStream().pipe(banner);
+    createCanvas({ name, width: 1200, height: 675, white: true  }).createPNGStream().pipe(social);
 
     console.log(`Banner created: ${bannerPath}`);
     console.log(`Banner created: ${socialPath}`);
