@@ -3,7 +3,7 @@ date: 2020-05-22
 tags: css
 
 ----
-I think Twitter was the first app for mobile with a dark theme that I was obsessed with. I know, Youtube already had one back then, but that wasn't a big deal for me, since 90% of the time I'm using Youtube, either the app or at the desktop, I'm using it to watch videos in full screen.
+I think Twitter was the first mobile app with a dark theme that I was obsessed with. I know, Youtube already had one back then, but that wasn't a big deal for me, since 90% of the time I'm using Youtube, either the app or at the desktop, I'm using it to watch videos in full screen.
 
 My love for dark-colored applications started back when I use Sublime Text for the first time (I remember it was still version 1), but what I like about it, was that not only the editor area of the app was dark-colored but the whole app. And the coloring was so on-point that I didn't have to personalize it, nor choose any other theme it already had, the default one was perfect.
 
