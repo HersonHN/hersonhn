@@ -10,7 +10,7 @@
     "build": "hexo generate",
     "webpack": "webpack",
     "publish": "hexo generate && now && now alias",
-    "server": "rm db.json; hexo server"
+    "server": "rm db.json; hexo server --config _config.yml,_config.local.yml"
   },
   "dependencies": {
     "change-theme-button": "^0.1.0",

@@ -1,16 +1,23 @@
-<title>
-  {%- if __title -%}
-    {{ __title }}
-  {%- elif page.title -%}
-    {{ page.title }}
-  {%- else -%}
-    HersonHN
-  {%- endif -%}
-</title>
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name="description" content="Herson Salinas' webste">
+
+{%- if not __title -%}
+    {%- if page.title -%}
+        {%- set __title = page.title -%}
+    {%- else -%}
+        {%- set __title = "Herson Salinas" -%}
+    {%- endif -%}
+{%- endif %}
+
+<title>{{ __title }}</title>
 <meta name="robots" content="index,follow">
+
+<base href="{{ page.permalink }}">
+
+<meta name="description" content="{{ __title }}">
+<meta name="theme-color" content="#DC143C">
+<meta name="format-detection" content="telephone=no">
+
 <link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
 {% for fileName in page.cssFiles -%}
   <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
@@ -20,8 +27,9 @@
 {%- endif -%}
 {%- if _hasgist -%}
   <link rel="stylesheet" href="/assets/scss/gist/gist.css">
-{%- endif -%}
-{%- if site.posts.length -%}
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+{%- endif %}
+{% if site.posts.length -%}
+  <link rel="alternate" type="application/rss+xml" title="Herson Salinas" href="/atom.xml">
 {% endif -%}
 {%- include 'partials/google-analitics.njk' -%}
+

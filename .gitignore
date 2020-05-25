@@ -157,4 +157,5 @@ public/
 db.json
 .now
 package-lock.json
+_multiconfig.yml
 test-*.md

@@ -1,0 +1,5 @@
+url: http://localhost:4000
+node_sass:
+  outputStyle: compressed
+  precision: 5
+  sourceComments: false
