@@ -2,6 +2,7 @@
 a {
   @extend .fg-color;
   transition: color 0.2s ease;
+  word-break: break-word;
 }
 
 a:hover {
