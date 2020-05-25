@@ -68,10 +68,10 @@ function generateBanners(list, path) {
     const social = fs.createWriteStream(socialPath);
 
     createCanvas({ name, width: 2500, height: 625, white: false })
-      .createPNGStream({ compressionLevel: 4 }).pipe(banner);
+      .createPNGStream().pipe(banner);
 
     createCanvas({ name, width: 1200,  height: 675, white: true })
-      .createPNGStream({ compressionLevel: 9 }).pipe(social);
+      .createPNGStream().pipe(social);
 
     console.log(`Banner created: ${bannerPath}`);
     console.log(`Banner created: ${socialPath}`);
