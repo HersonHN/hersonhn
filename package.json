@@ -10,6 +10,7 @@
     "build": "hexo generate",
     "webpack": "webpack",
     "publish": "hexo generate && now && now alias",
+    "banners": "node tools/generate-banners.js",
     "server": "rm db.json; hexo server --config _config.yml,_config.local.yml"
   },
   "dependencies": {
@@ -34,6 +35,9 @@
     "earthbound-battlebackgrounds": "git+https://github.com/gjtorikian/Earthbound-Battle-Backgrounds-JS.git",
     "gist-syntax-themes": "^1.1.0",
     "json-stringify-safe": "^5.0.1",
+    "random": "^2.2.0",
+    "seedrandom": "^3.0.5",
+    "trianglify": "^4.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   }
