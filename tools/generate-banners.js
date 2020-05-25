@@ -2,24 +2,34 @@
 const fs = require('fs');
 const Path = require('path');
 
+const yargs = require('yargs');
 const _ = require('lodash');
 const random = require('random');
 const seedrandom = require('seedrandom');
 const trianglify = require('trianglify');
+const Canvas = require('canvas');
+
+const postPath = Path.join(__dirname, '../source/_posts');
+const bannersPath = Path.join(__dirname, '../source/assets/img/banners');
 
 const ls = path => fs.readdirSync(path);
 const lsFilter = (path, filter, noExt) => ls(path)
     .filter(file => file.match(filter))
     .map(name => noExt ? name.replace(filter, '') : name);
 
-const postPath = Path.join(__dirname, '../source/_posts');
-const bannersPath = Path.join(__dirname, '../source/assets/img/banners');
+const flags = yargs.argv;
 
 init();
 
 function init() {
   let posts = lsFilter(postPath, /.md$/, true);
   let banners = lsFilter(bannersPath, /.png$/, true);
+
+  if (flags.force) {
+    deleteBanners(banners, bannersPath);
+    generateBanners(posts, bannersPath);
+    return;
+  }
 
   let bannersToDelete = _.difference(banners, posts);
   let bannersToCreate = _.difference(posts, banners);
@@ -57,9 +67,8 @@ function generateBanners(list, path) {
     const png = fs.createWriteStream(pngPath);
     const jpg = fs.createWriteStream(jpgPath);
 
-    let canvas = createCanvas(name);
-    canvas.createPNGStream().pipe(png);
-    canvas.createJPEGStream().pipe(jpg);
+    createCanvas({ name, size: 2500, white: false }).createPNGStream().pipe(png);
+    createCanvas({ name, size: 800, white: true }).createJPEGStream().pipe(jpg);
 
     console.log(`Banner created: ${pngPath}`);
     console.log(`Banner created: ${jpgPath}`);
@@ -67,7 +76,7 @@ function generateBanners(list, path) {
 }
 
 
-function createCanvas(name) {
+function createCanvas({ name, size, white }) {
   random.use(seedrandom(name));
 
   let rand = (list) => {
@@ -75,9 +84,9 @@ function createCanvas(name) {
     return list[index];
   }
 
-  const canvas = trianglify({
-    width: 800,
-    height: 800 / 16 * 9,
+  let options = {
+    width: size,
+    height: size / 16 * 9,
     xColors: 'random',
     yColors: 'random',
     cellSize: rand([75, 40, 100]),
@@ -86,7 +95,17 @@ function createCanvas(name) {
     seed: name,
     strokeWidth: 2,
     variance: rand([0, 0.75, 1, 1.5, 2, 2.5, 3]),
-  }).toCanvas();
+  };
 
-  return canvas;
+  let defaultCanvas = null;
+  if (white) {
+    defaultCanvas = Canvas.createCanvas(options.width, options.height);
+    let ctx = defaultCanvas.getContext('2d');
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, options.width, options.height);
+  }
+
+  const trianglifyCanvas = trianglify(options).toCanvas(defaultCanvas);
+
+  return trianglifyCanvas;
 }

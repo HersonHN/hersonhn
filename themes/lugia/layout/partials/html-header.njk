@@ -1,22 +1,31 @@
+
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width,initial-scale=1">
 
+{# GENERATE THE TITLE FOR THE PAGE #}
 {%- if not __title -%}
     {%- if page.title -%}
         {%- set __title = page.title -%}
     {%- else -%}
         {%- set __title = "Herson Salinas" -%}
     {%- endif -%}
-{%- endif %}
+{%- endif -%}
 
 <title>{{ __title }}</title>
+
+
+
+{# MUST-HAVE METATAGS #}
 <meta name="robots" content="index,follow">
-
-<base href="{{ page.permalink }}">
-
 <meta name="description" content="Herson Salinas' Website">
 <meta name="format-detection" content="telephone=no">
+{% if page.permalink -%}
+<base href="{{ page.permalink }}">
+{%- endif %}
 
+
+
+{# METAGAGS FOR FAVICONS #}
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
@@ -27,18 +36,49 @@
 <meta name="msapplication-config" content="/assets/img/browserconfig.xml">
 <meta name="theme-color" content="#dc143c">
 
-<link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
-{% for fileName in page.cssFiles -%}
-  <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
-{% endfor -%}
-{%- if _hascode -%}
-  <link rel="stylesheet" href="/assets/css/highlight/tomorrow-night.css">
-{%- endif -%}
-{%- if _hasgist -%}
-  <link rel="stylesheet" href="/assets/scss/gist/gist.css">
-{%- endif %}
+
+
+{# SOCIAL MEDIA METATAGS #}
+{% if page.layout == 'post' %}
+<meta property="og:url" content="{{ page.permalink }}">
+<meta property="og:title" content="{{ __title }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}.jpg">
+<meta property="og:site_name" content="{{ config.title }}">
+<meta property="og:locale" content="{{ page.language or config.language }}">
+<meta property="article:author" content="{{ page.author or config.author }}">
+
+<meta name="twitter:creator" content="@hersonhn">
+<meta name="twitter:url" content="{{ page.permalink }}">
+<meta name="twitter:title" content="{{ __title }}">
+<meta name="twitter:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}.jpg">
+{% endif %}
+
+
+
+{# RSS FEED #}
 {% if site.posts.length -%}
   <link rel="alternate" type="application/rss+xml" title="Herson Salinas" href="/atom.xml">
 {% endif -%}
+
+
+
+{# PAGE STYLES #}
+<link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
+
+{% for fileName in page.cssFiles -%}
+  <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
+{% endfor -%}
+
+{%- if _hascode -%}
+  <link rel="stylesheet" href="/assets/css/highlight/tomorrow-night.css">
+{%- endif -%}
+
+{%- if _hasgist -%}
+  <link rel="stylesheet" href="/assets/scss/gist/gist.css">
+{%- endif %}
+
+
+{# GOOGLE ANALYTICS #}
 {%- include 'partials/google-analitics.njk' -%}
 

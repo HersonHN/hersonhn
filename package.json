@@ -10,8 +10,9 @@
     "build": "hexo generate",
     "webpack": "webpack",
     "publish": "hexo generate && now && now alias",
+    "server": "rm db.json; hexo server --config _config.yml,_config.local.yml",
     "banners": "node tools/generate-banners.js",
-    "server": "rm db.json; hexo server --config _config.yml,_config.local.yml"
+    "banners-force": "node tools/generate-banners.js --force"
   },
   "dependencies": {
     "change-theme-button": "^0.1.0",

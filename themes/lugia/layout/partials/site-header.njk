@@ -1,10 +1,18 @@
-<header class="site-header">
+<header
+  {% if page.layout == 'post' %}
+    class="site-header banner"
+    style="background-image: url('/assets/img/banners/{{ page.slug }}.png')"
+  {% else %}
+    class="site-header"
+  {% endif %}>
   <div class="flex">
     <div class="flex-grow">
       {% if site.posts.length %}
       <nav class="center">
-        <a href="/">Home</a> |
-        <a href="/posts">Posts</a>
+        <span class="bg-color rounded">
+          <a href="/">Home</a> |
+          <a href="/posts">Posts</a>
+        </span>
       </nav>
       {% endif %}
     </div>

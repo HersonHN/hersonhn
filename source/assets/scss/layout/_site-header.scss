@@ -7,4 +7,16 @@
     min-width: 32px;
     min-height: 32px;
   }
+
+  &.banner {
+    min-height: 25vw;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .rounded {
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+  }
 }
