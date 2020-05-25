@@ -15,8 +15,17 @@
 <base href="{{ page.permalink }}">
 
 <meta name="description" content="{{ __title }}">
-<meta name="theme-color" content="#DC143C">
 <meta name="format-detection" content="telephone=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#dc143c">
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<meta name="msapplication-TileColor" content="#dc143c">
+<meta name="msapplication-config" content="/assets/img/browserconfig.xml">
+<meta name="theme-color" content="#dc143c">
 
 <link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
 {% for fileName in page.cssFiles -%}
