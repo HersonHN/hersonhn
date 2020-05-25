@@ -23,7 +23,7 @@ init();
 
 function init() {
   let posts = lsFilter(postPath, /.md$/, true);
-  let banners = lsFilter(bannersPath, /.png$/, true);
+  let banners = lsFilter(bannersPath, /\@banner.png$/, true);
 
   if (flags.force) {
     deleteBanners(banners, bannersPath);
@@ -44,8 +44,8 @@ function init() {
 
 function deleteBanners(list, path) {
   for (let name of list) {
-    deleteBanner(`${path}/${name}.png`);
-    deleteBanner(`${path}/${name}.jpg`);
+    deleteBanner(`${path}/${name}@banner.png`);
+    deleteBanner(`${path}/${name}@social.png`);
   }
 }
 
@@ -61,22 +61,25 @@ function deleteBanner(file) {
 
 function generateBanners(list, path) {
   for (let name of list) {
-    let pngPath = `${path}/${name}.png`;
-    let jpgPath = `${path}/${name}.jpg`;
+    let bannerPath = `${path}/${name}@banner.png`;
+    let socialPath = `${path}/${name}@social.png`;
 
-    const png = fs.createWriteStream(pngPath);
-    const jpg = fs.createWriteStream(jpgPath);
+    const banner = fs.createWriteStream(bannerPath);
+    const social = fs.createWriteStream(socialPath);
 
-    createCanvas({ name, size: 2500, white: false }).createPNGStream().pipe(png);
-    createCanvas({ name, size: 800, white: true }).createJPEGStream().pipe(jpg);
+    createCanvas({ name, width: 2500, height: 625, white: false })
+      .createPNGStream({ compressionLevel: 4 }).pipe(banner);
 
-    console.log(`Banner created: ${pngPath}`);
-    console.log(`Banner created: ${jpgPath}`);
+    createCanvas({ name, width: 1200,  height: 675, white: true })
+      .createPNGStream({ compressionLevel: 9 }).pipe(social);
+
+    console.log(`Banner created: ${bannerPath}`);
+    console.log(`Banner created: ${socialPath}`);
   }
 }
 
 
-function createCanvas({ name, size, white }) {
+function createCanvas({ name, width, height, white }) {
   random.use(seedrandom(name));
 
   let rand = (list) => {
@@ -85,8 +88,8 @@ function createCanvas({ name, size, white }) {
   }
 
   let options = {
-    width: size,
-    height: size / 16 * 9,
+    width: width,
+    height: height,
     xColors: 'random',
     yColors: 'random',
     cellSize: rand([75, 40, 100]),
@@ -103,6 +106,7 @@ function createCanvas({ name, size, white }) {
     let ctx = defaultCanvas.getContext('2d');
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, options.width, options.height);
+    ctx.imageSmoothingEnabled = false;
   }
 
   const trianglifyCanvas = trianglify(options).toCanvas(defaultCanvas);

@@ -17,7 +17,7 @@
 
 {# MUST-HAVE METATAGS #}
 <meta name="robots" content="index,follow">
-<meta name="description" content="Herson Salinas' Website">
+<meta name="description" content="{{ config.title }}">
 <meta name="format-detection" content="telephone=no">
 {% if page.permalink -%}
 <base href="{{ page.permalink }}">
@@ -43,7 +43,10 @@
 <meta property="og:url" content="{{ page.permalink }}">
 <meta property="og:title" content="{{ __title }}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}.jpg">
+<meta property="og:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}@social.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="450">
+
 <meta property="og:site_name" content="{{ config.title }}">
 <meta property="og:locale" content="{{ page.language or config.language }}">
 <meta property="article:author" content="{{ page.author or config.author }}">
@@ -51,7 +54,7 @@
 <meta name="twitter:creator" content="@hersonhn">
 <meta name="twitter:url" content="{{ page.permalink }}">
 <meta name="twitter:title" content="{{ __title }}">
-<meta name="twitter:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}.jpg">
+<meta name="twitter:image" content="{{ config.url }}/assets/img/banners/{{ page.slug }}@social.png">
 {% endif %}
 
 
