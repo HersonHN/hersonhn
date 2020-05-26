@@ -52,4 +52,5 @@ The actual script is here: [generate-banners.js](https://github.com/HersonHN/her
 [canvas]: https://www.npmjs.com/package/canvas
 [canvas-save]: https://developer.aliyun.com/mirror/npm/package/canvas#canvascreatejpegstream
 [seedrandom]: https://www.npmjs.com/package/seedrandom
+[optipng]: https://www.npmjs.com/package/optipng
 [ws]: https://nodejs.org/api/stream.html#stream_writable_streams
