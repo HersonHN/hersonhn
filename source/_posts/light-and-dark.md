@@ -1,6 +1,6 @@
 title: Light and Dark
 date: 2020-05-22
-tags: css
+tags: [meta, css]
 
 ----
 I think Twitter was the first mobile app with a dark theme that I was obsessed with. I know, Youtube already had one back then, but that wasn't a big deal for me, since 90% of the time I'm using Youtube, either the app or at the desktop, I'm using it to watch videos in full screen.

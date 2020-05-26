@@ -52,6 +52,7 @@ function deleteBanners(list, path) {
   }
 }
 
+
 function deleteBanner(file) {
   console.log(`Banner removed: ${file}`);
   try {
@@ -62,12 +63,14 @@ function deleteBanner(file) {
   }
 }
 
+
 async function generateBanners(list, path) {
   for (let name of list) {
     await createBanner({ name, path: `${path}/${name}@banner.png`, width: 2500, height: 625, white: false });
     await createBanner({ name, path: `${path}/${name}@social.png`, width: 1200, height: 675, white: true });
   }
 }
+
 
 function createBanner(params) {
   let bannerPath = params.path;
