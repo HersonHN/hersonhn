@@ -12,7 +12,7 @@ const Canvas = require('canvas');
 const trianglify = require('trianglify');
 const optipng = require('optipng');
 
-const postPath = Path.join(__dirname, '../source/_posts');
+const postsPath = Path.join(__dirname, '../source/_posts');
 const bannersPath = Path.join(__dirname, '../source/assets/img/banners');
 
 const ls = path => fs.readdirSync(path);
@@ -23,10 +23,10 @@ const lsFilter = (path, filter, noExt) => ls(path)
 const flags = yargs.argv;
 
 init()
-  .catch(error => console.error);
+  .catch(error => console.error(error));
 
 function init() {
-  let posts = lsFilter(postPath, /.md$/, true);
+  let posts = lsFilter(postsPath, /.md$/, true);
   let banners = lsFilter(bannersPath, /\@banner.png$/, true);
 
   if (flags.force) {
@@ -54,9 +54,9 @@ function deleteBanners(list, path) {
 
 
 function deleteBanner(file) {
-  console.log(`Banner removed: ${file}`);
   try {
     fs.unlinkSync(file);
+    console.log(`Banner removed: ${file}`);
     return true;
   } catch (err) {
     return false;
@@ -76,13 +76,13 @@ function createBanner(params) {
   let bannerPath = params.path;
 
   return new Promise(function (resolve, reject) {
-    let writeStream = fs.createWriteStream(bannerPath);
-    let compressStream = new optipng(['-o2']);
+    let compress = new optipng(['-o2']);
+    let writeFile = fs.createWriteStream(bannerPath);
 
     let stream = createCanvas(params)
       .createPNGStream()
-      .pipe(compressStream)
-      .pipe(writeStream);
+      .pipe(compress)
+      .pipe(writeFile);
 
       stream.on('finish', () => resolve(bannerPath));
       stream.on('error', error => reject(error));
@@ -118,7 +118,6 @@ function createCanvas({ name, width, height, white }) {
     let ctx = defaultCanvas.getContext('2d');
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, options.width, options.height);
-    ctx.imageSmoothingEnabled = false;
   }
 
   return trianglify(options).toCanvas(defaultCanvas);;

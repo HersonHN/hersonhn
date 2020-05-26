@@ -28,7 +28,7 @@ My configuration ended up like this:
     seed: name,
     strokeWidth: 2,
     variance: rand([0, 0.75, 1, 1.5, 2, 2.5, 3]),
-  }
+}
 ```
 
 The `rand` function called the seeded random function to return an element of the provided array.
@@ -46,7 +46,6 @@ Then I added [optipng][optipng] to compress the generated files, that was the ea
 I'm so happy with the final result because it was pretty easy to do and quite a beautiful result. Sometimes we can get happy with little things, and coding the generator for these banners was that "little thing" for me.
 
 The actual script is here: [generate-banners.js](https://github.com/HersonHN/hersonhn/blob/master/tools/generate-banners.js)
-
 
 
 [trianglify]: https://trianglify.io/
