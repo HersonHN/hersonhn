@@ -36,6 +36,7 @@
     "earthbound-battlebackgrounds": "git+https://github.com/gjtorikian/Earthbound-Battle-Backgrounds-JS.git",
     "gist-syntax-themes": "^1.1.0",
     "json-stringify-safe": "^5.0.1",
+    "optipng": "^2.1.0",
     "random": "^2.2.0",
     "seedrandom": "^3.0.5",
     "trianglify": "^4.0.0",

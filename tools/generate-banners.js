@@ -4,10 +4,13 @@ const Path = require('path');
 
 const yargs = require('yargs');
 const _ = require('lodash');
+
 const random = require('random');
 const seedrandom = require('seedrandom');
-const trianglify = require('trianglify');
+
 const Canvas = require('canvas');
+const trianglify = require('trianglify');
+const optipng = require('optipng');
 
 const postPath = Path.join(__dirname, '../source/_posts');
 const bannersPath = Path.join(__dirname, '../source/assets/img/banners');
@@ -19,7 +22,8 @@ const lsFilter = (path, filter, noExt) => ls(path)
 
 const flags = yargs.argv;
 
-init();
+init()
+  .catch(error => console.error);
 
 function init() {
   let posts = lsFilter(postPath, /.md$/, true);
@@ -27,8 +31,7 @@ function init() {
 
   if (flags.force) {
     deleteBanners(banners, bannersPath);
-    generateBanners(posts, bannersPath);
-    return;
+    return generateBanners(posts, bannersPath);
   }
 
   let bannersToDelete = _.difference(banners, posts);
@@ -38,7 +41,7 @@ function init() {
   if (!bannersToCreate.length) console.log('No banners to create');
 
   deleteBanners(bannersToDelete, bannersPath);
-  generateBanners(bannersToCreate, bannersPath);
+  return generateBanners(bannersToCreate, bannersPath);
 }
 
 
@@ -59,20 +62,29 @@ function deleteBanner(file) {
   }
 }
 
-function generateBanners(list, path) {
+async function generateBanners(list, path) {
   for (let name of list) {
-    let bannerPath = `${path}/${name}@banner.png`;
-    let socialPath = `${path}/${name}@social.png`;
-
-    const banner = fs.createWriteStream(bannerPath);
-    const social = fs.createWriteStream(socialPath);
-
-    createCanvas({ name, width: 2500, height: 625, white: false }).createPNGStream().pipe(banner);
-    createCanvas({ name, width: 1200, height: 675, white: true  }).createPNGStream().pipe(social);
-
-    console.log(`Banner created: ${bannerPath}`);
-    console.log(`Banner created: ${socialPath}`);
+    await createBanner({ name, path: `${path}/${name}@banner.png`, width: 2500, height: 625, white: false });
+    await createBanner({ name, path: `${path}/${name}@social.png`, width: 1200, height: 675, white: true });
   }
+}
+
+function createBanner(params) {
+  let bannerPath = params.path;
+
+  return new Promise(function (resolve, reject) {
+    let writeStream = fs.createWriteStream(bannerPath);
+    let compressStream = new optipng(['-o2']);
+
+    let stream = createCanvas(params)
+      .createPNGStream()
+      .pipe(compressStream)
+      .pipe(writeStream);
+
+      stream.on('finish', () => resolve(bannerPath));
+      stream.on('error', error => reject(error));
+  })
+  .then(bannerPath => console.log(`Banner created: ${bannerPath}`))
 }
 
 
@@ -89,7 +101,7 @@ function createCanvas({ name, width, height, white }) {
     height: height,
     xColors: 'random',
     yColors: 'random',
-    cellSize: rand([75, 40, 100]),
+    cellSize: rand([75, 150, 100]),
     colorSpace: rand(['rgb', 'hsv', 'hsl', 'hsi', 'lab', 'hcl']),
     fill: false,
     seed: name,
@@ -106,7 +118,5 @@ function createCanvas({ name, width, height, white }) {
     ctx.imageSmoothingEnabled = false;
   }
 
-  const trianglifyCanvas = trianglify(options).toCanvas(defaultCanvas);
-
-  return trianglifyCanvas;
+  return trianglify(options).toCanvas(defaultCanvas);;
 }
