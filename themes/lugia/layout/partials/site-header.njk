@@ -22,9 +22,12 @@
       {% endif -%}
     </div>
   </div>
+
+  {% if not page.forceTheme -%}
   <script>
     if (localStorage.getItem('theme')) {
       document.body.className = localStorage.getItem('theme');
     }
   </script>
+  {% endif -%}
 </header>
