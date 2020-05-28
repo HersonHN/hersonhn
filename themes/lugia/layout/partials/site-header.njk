@@ -1,11 +1,11 @@
 <header
   {% if page.layout == 'post' %}
-    class="site-header banner"
+    class="site-header bg-color banner sticky"
     style="background-image: url('/assets/img/banners/{{ page.slug }}@banner.png')"
   {% else %}
-    class="site-header"
+    class="site-header bg-color"
   {% endif %}>
-  <div class="flex">
+  <div class="flex header-inner">
     <div class="flex-grow">
       {% if site.posts.length %}
       <nav class="center">
