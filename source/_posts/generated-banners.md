@@ -8,7 +8,7 @@ tags: [meta, javascript]
 
 This banner you can see on this post is generated using the URL for the page. It's partially random, it is just using the title as a seed for the RNG.
 
-for that I used [trianglify][trianglify] which pretty much does all the hard work, trianglify uses canvas to generate the mesh for the image, you can use it either on the frontend or backend and saves the image as _png_, _jpeg_ or _svg_.
+For that I used [trianglify][trianglify] which pretty much does all the hard work, trianglify uses canvas to generate the mesh for the image, you can use it either on the frontend or backend and saves the image as _png_, _jpeg_ or _svg_.
 
 At the core it uses [canvas][canvas], which is a great library to emulate the `<canvas>` API at the backend, it works pretty similarly as in the frontend (I, personally can't see the differences between both), it also provides an [api to save the generated image as png or jpeg][canvas-save].
 
