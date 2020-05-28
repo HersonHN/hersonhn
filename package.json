@@ -15,7 +15,7 @@
     "banners:force": "node tools/generate-banners.js --force"
   },
   "dependencies": {
-    "change-theme-button": "^0.1.0",
+    "change-theme-button": "^0.2.2",
     "hexo": "^4.0.1",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
