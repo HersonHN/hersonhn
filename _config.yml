@@ -36,6 +36,10 @@ external_link.enable: true
 marked:
   smartypants: false
 
+sitemap:
+    path: sitemap.xml
+    rel: false
+
 feed:
   type: atom
   path: atom.xml
