@@ -1,0 +1,14 @@
+
+.serif {
+  $serif: 'Latin Modern';
+  font: 18px 'Latin Modern';
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $serif;
+    font-weight: normal;
+  }
+
+  pre, code {
+    font-size: 1rem;
+  }
+}
