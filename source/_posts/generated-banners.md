@@ -20,14 +20,14 @@ My configuration ended up like this:
 
 ```javascript
 {
-    width: width,
-    height: height,
-    cellSize: rand([75, 150, 100]),
-    colorSpace: rand(['rgb', 'hsv', 'hsl', 'hsi', 'lab', 'hcl']),
-    fill: false,
-    seed: name,
-    strokeWidth: 2,
-    variance: rand([0, 0.75, 1, 1.5, 2, 2.5, 3]),
+  width: width,
+  height: height,
+  cellSize: rand([75, 150, 100]),
+  colorSpace: rand(['rgb', 'hsv', 'hsl', 'hsi', 'lab', 'hcl']),
+  fill: false,
+  seed: name,
+  strokeWidth: 2,
+  variance: rand([0, 0.75, 1, 1.5, 2, 2.5, 3]),
 }
 ```
 

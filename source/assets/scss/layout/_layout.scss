@@ -3,9 +3,20 @@
 }
 
 html, body {
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 1rem;
+  scroll-behavior: smooth;
   height: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  height: 100%;
+  font-family: sans-serif;
 }
 
 
@@ -13,14 +24,13 @@ html, body {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100%;
-  font-family: sans-serif;
 
   & > main {
     flex: 1 1;
   }
 
   .content {
-    max-width: 900px;
+    max-width: 80ch;
     margin: auto;
     padding: 1rem;
   }
