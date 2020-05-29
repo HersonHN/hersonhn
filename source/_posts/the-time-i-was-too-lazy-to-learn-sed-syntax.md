@@ -1,9 +1,10 @@
+---
 title: "The Time I Was Too Lazy to Learn sed Syntax"
 date: 2020-05-15
-tags:
-  - ruby
-  - cli
------
+description: I s a script in Ruby to evaluate input from STDIN and change that input line by line.
+tags: [ruby, cli]
+
+---
 
 A long time ago, to be specific back in 2013, I was minding my own business sorting my videos and series collection. I’m very perfectionist at organizing files, for instance, all my music files are sorted first in **Artist** folder, then by **Year - Album**, and inside the album folder, all songs with just the number of the track, a hyphen and then the name of the track (**## - Track name**).
 

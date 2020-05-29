@@ -1,8 +1,11 @@
+---
 title: Light and Dark
 date: 2020-05-22
+description: Modern Operative Systems give us the option to choose light or dark themes at OS-Level, with simple CSS we can build a site that can reflect that configuration visually.
 tags: [meta, css]
 
-----
+---
+
 I think Twitter was the first mobile app with a dark theme that I was obsessed with. I know, Youtube already had one back then, but that wasn't a big deal for me, since 90% of the time I'm using Youtube, either the app or at the desktop, I'm using it to watch videos in full screen.
 
 My love for dark-colored applications started back when I use Sublime Text for the first time (I remember it was still version 1), but what I like about it, was that not only the editor area of the app was dark-colored but the whole app. And the coloring was so on-point that I didn't have to personalize it, nor choose any other theme it already had, the default one was perfect.
@@ -11,7 +14,10 @@ When Apple announced a dark theme for iOS and macOS I was very hyped and countin
 
 All that being said, CSS gives us the option to customize our websites depending on the _theme_ the OS is using.
 
-`@media (prefers-color-scheme: $THEME)` is the key to everything:
+`@media (prefers-color-scheme: $THEME)` is the key to everything, it's a simple media query to evaulate the user's preference on their OS or Browser theme. Check the MDN page to learn about browsers' support:
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+
+Quick example:
 
 ```css
 @media (prefers-color-scheme: light) {

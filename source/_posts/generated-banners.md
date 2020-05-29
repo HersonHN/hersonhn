@@ -1,8 +1,10 @@
+---
 title: Generating Dynamic Banners Using the Post Title as Input
 date: 2020-05-25
+description: Random geometric shapes drawed in a canvas and saved as .png
 tags: [meta, javascript]
 
-----
+---
 
 <small><i>Ok, this one was pretty fun, and not hard at all. I quite did all the work in half a day, but I want to share what I did because I liked the final result.</i></small>
 

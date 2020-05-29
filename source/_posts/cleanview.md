@@ -1,8 +1,10 @@
+---
 title: "cleanview: A Clean Viewer for Articles Online"
 date: 2020-05-10
+description: Cleanview is a little npm package I created to take the main content from web articles and remove all the clutter that's not part of the real content.
 tags: javascript
 
-----
+---
 
 Cleanview is a little npm package I created to take the main content from web articles and remove all the clutter that's not part of the real content.
 

@@ -17,10 +17,12 @@
 
 {# MUST-HAVE METATAGS #}
 <meta name="robots" content="index,follow">
-<meta name="description" content="{{ config.title }}">
+{% if page.description -%}
+    <meta name="description" content="{{ page.description }}">
+{%- endif %}
 <meta name="format-detection" content="telephone=no">
 {% if page.permalink -%}
-<base href="{{ page.permalink }}">
+    <base href="{{ page.permalink }}">
 {%- endif %}
 
 
@@ -61,7 +63,7 @@
 
 {# RSS FEED #}
 {% if site.posts.length -%}
-  <link rel="alternate" type="application/rss+xml" title="Herson Salinas" href="/atom.xml">
+    <link rel="alternate" type="application/rss+xml" title="Herson Salinas" href="/atom.xml">
 {% endif -%}
 
 
@@ -70,15 +72,15 @@
 <link rel="stylesheet" href="/assets/scss/master.css?v={{ moment().unix() }}">
 
 {% for fileName in page.cssFiles -%}
-  <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
+    <link rel="stylesheet" href="{{ fileName }}?v={{ moment().unix() }}">
 {% endfor -%}
 
 {%- if _hascode -%}
-  <link rel="stylesheet" href="/assets/css/highlight/tomorrow-night.css">
+    <link rel="stylesheet" href="/assets/css/highlight/tomorrow-night.css">
 {%- endif -%}
 
 {%- if _hasgist -%}
-  <link rel="stylesheet" href="/assets/scss/gist/gist.css">
+    <link rel="stylesheet" href="/assets/scss/gist/gist.css">
 {%- endif %}
 
 
