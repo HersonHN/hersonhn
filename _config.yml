@@ -38,6 +38,7 @@ marked:
 
 sitemap:
     path: sitemap.xml
+    template: sitemap.xml
     rel: false
 
 feed:
@@ -57,7 +58,9 @@ node_sass:
 
 skip_render:
   - assets/css/*
+  - assets/css/**/*
   - assets/js/*
+  - assets/js/**/*
   - assets/dist/*
   - assets/dist/**/*
 
