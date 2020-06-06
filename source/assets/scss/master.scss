@@ -10,9 +10,12 @@
 @import "layout/layout";
 @import "layout/site-header";
 @import "layout/site-footer";
+
+@import "themes/mono";
+@import "themes/latin-modern";
+@import "themes/calendas";
+
 @import "components/icon";
-@import "components/mono";
-@import "components/serif";
 @import "components/post";
 @import "components/tag";
 @import "components/flex";

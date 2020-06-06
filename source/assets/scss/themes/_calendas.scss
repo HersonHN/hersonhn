@@ -1,0 +1,18 @@
+
+.calendas {
+  $font: 'Calendas Plus';
+
+  font-family: $font;
+  font-feature-settings: 'frac' 1, 'kern' 1, 'clig' 1, 'swsh' 1;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font;
+    font-weight: normal;
+  }
+
+  pre, code {
+    font-size: .8rem;
+  }
+}
